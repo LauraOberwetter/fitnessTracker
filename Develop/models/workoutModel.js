@@ -1,44 +1,61 @@
 const mongoose = require("mongoose"); //require mongoose
 const Schema = mongoose.Schema; //bring in schema class, capture in Schema variable
 
-const WorkoutSchema = new Schema ({ //invoke schema, capture within WorkoutSchema variable
-    //define fields
-    type: {
+const WorkoutSchema = new Schema({   //invoke schema, capture within WorkoutSchema variable
 
-    },
-
-    name: {
+  //define fields
+  day: {
+    type: Date,
+    default: Date.now(),
+  },
+  exercise: [
+    {
+      type: {
         type: String,
         trim: true,
-    },
+        required: true,
+      },
+      name: {
+        type: String,
+        trim: true,
+        required: true,
+      },
 
-    duration: {
+      duration: {
         type: Number,
-        required: true
-    },
+        trim: true,
+        required: true,
+      },
 
-    weight: {
+      weight: {
         type: Number,
+        trim: true,
+        required: true,
+      },
 
-    },
-
-    reps: {
+      reps: {
         type: Number,
+        trim: true,
+        required: true,
+      },
 
-    },
-
-    sets: {
+      sets: {
         type: Number,
+        trim: true,
+        required: true,
+      },
 
-    },
-
-    distance: {
+      distance: {
         type: Number,
-
-    }
-
+        trim: true,
+        required: true,
+      },
+    },
+  ],
 });
+
+//function
 
 const Workout = mongoose.model("Workout", WorkoutSchema); // pass WorkoutSchema to model method within Mongoose. This creates a model (Workout) to export
 
-module.exports = Workout; //export model.  imported into server.js 
+module.exports = Workout; //export model.  imported into server.js
