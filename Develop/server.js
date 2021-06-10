@@ -4,7 +4,7 @@ const express = require("express");
 const PORT = process.env.PORT || 3002;
 
 //build model/connect model file
-const Workout = require("./workoutModel.js"); //require file
+const Workout = require("./models/workoutModel.js"); //require file
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
