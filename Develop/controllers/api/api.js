@@ -1,12 +1,14 @@
 const router = require("express").Router();
 const Workout = require("../models/workoutModel.js");
 
-router.post("/api/workout", ({ body }, res) => {
+//create workout
+//ref from miniproj #26 (transaction)
+router.post("/workout", ({ body }, res) => { //pulling from workoutmodel? or should this be connected to workoutModel.js?
   Workout.create(body)
-    .then(dbTransaction => {
-      res.json(dbTransaction);
+    .then(dbWorkout => { // does db workout need to be declared first or is this already created with mongoose?
+      res.json(dbWorkout);
     })
-    .catch(err => {
+    .catch(err => { // error return
       res.status(400).json(err);
     });
 });
@@ -20,7 +22,8 @@ router.post("/api/transaction/bulk", ({ body }, res) => {
       res.status(400).json(err);
     });
 });
-
+//GET /stats
+//GET /exercise
 router.get("/api/transaction", (req, res) => {
   Transaction.find({})
     .sort({ date: -1 })
