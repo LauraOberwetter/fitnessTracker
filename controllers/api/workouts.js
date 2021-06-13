@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Workout = require("./models/workoutModel.js"); //require file
+const Workout = require("../../models/workoutModel.js"); //require file
 
 //create workout
 //ref from miniproj #26 (transaction)
