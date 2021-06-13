@@ -27,8 +27,7 @@ Workout.create(data) //13: pass defined data from step #12 to Example model thro
     console.log(message);
   });
 
-  require('./controllers/homeRoute')(app);
-
+  app.use(require("./controllers/index.js"));
 
   app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);

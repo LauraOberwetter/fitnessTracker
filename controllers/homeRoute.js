@@ -1,11 +1,9 @@
-//const router = require("express").Router();
+const router = require("express").Router();
 const path = require("path");
-
-module.exports = (app) => {
 
 //GET /
 //res.sendFile express docs and hot restaurant
-app.get('/', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         res.sendFile(path.join(__dirname, '../public/index.html'));
     } catch (err) {
@@ -16,7 +14,7 @@ app.get('/', async (req, res) => {
   });
 
 //GET /exercise
-app.get('/exercise', async (req, res) => {
+router.get('/exercise', async (req, res) => {
     try {
         res.sendFile(path.join(__dirname, '../public/exercise.html'));
     } catch (err) {
@@ -27,7 +25,7 @@ app.get('/exercise', async (req, res) => {
   });
 
 //GET /stats
-app.get('/stats', async (req, res) => {
+router.get('/stats', async (req, res) => {
     try {
         res.sendFile(path.join(__dirname, '../public/stats.html'));
     } catch (err) {
@@ -35,8 +33,9 @@ app.get('/stats', async (req, res) => {
         console.log(err)
     }
     
-  })
-};
+  });
+
+  module.exports = router;
 
 
 
