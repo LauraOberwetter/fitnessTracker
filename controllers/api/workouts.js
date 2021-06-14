@@ -3,7 +3,8 @@ const Workout = require("../../models/workoutModel.js"); //require file
 
 
 // GET and display workout
-router.get("/api",  (req, res) => { // for "/"home
+//line 5 in api.js: api/workouts
+router.get("/",  (req, res) => { // for "/"home
   Workout.find({}) //find workout db within workout model
     .then(Workout => {
       res.json(Workout);
@@ -15,7 +16,7 @@ router.get("/api",  (req, res) => { // for "/"home
 
 
 //PUT exercise in workoutdb
-//line 17 in api.js
+//line 17 in api.js ://api/workouts/id
 router.put("/:id", async ({ body, params }, res) => { //api/workouts/id
   try {
 
@@ -27,7 +28,7 @@ router.put("/:id", async ({ body, params }, res) => { //api/workouts/id
 
 
 //POST submitted workout in the workoutdb, to be pulled later
-//line 29 in api.js
+//line 29 in api.js: api/workouts
 router.post("/", async (req, res) => { 
   try {
 
