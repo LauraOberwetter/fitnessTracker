@@ -19,7 +19,7 @@ const data = {
 
 };
 
-Workout.create(data) //13: pass defined data from step #12 to Example model through a create method
+Workout.create(data) // pass defined data to Example model through a create method
   .then(dbWorkout => {
     console.log(dbWorkout); //console log what data is
   })
@@ -28,6 +28,8 @@ Workout.create(data) //13: pass defined data from step #12 to Example model thro
   });
 
   app.use(require("./controllers/index.js"));
+  //require("./controllers")(app) //LA suggested alternative to ^, prevents server connectivity
+
 
   app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
