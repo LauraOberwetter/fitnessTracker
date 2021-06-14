@@ -3,7 +3,6 @@
 ## Table of Contents
 - [Description](#description)
 - [Technologies Used](#technologies-used)
-- [Preview](#preview)
 - [Link](#link)
 
     
@@ -23,11 +22,6 @@ This is a NoSQL powered workout tracker that allows users to track their workout
 - CSS
 
     
-
-## Preview
-
-
-
    
 
 ## Link
